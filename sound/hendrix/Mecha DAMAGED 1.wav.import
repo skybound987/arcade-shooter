@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dp8h3sxpy5hk0"
+path="res://.godot/imported/Mecha DAMAGED 1.wav-880be0f217f27ab372fee6b8e23b2fa9.sample"
+
+[deps]
+
+source_file="res://sound/hendrix/Mecha DAMAGED 1.wav"
+dest_files=["res://.godot/imported/Mecha DAMAGED 1.wav-880be0f217f27ab372fee6b8e23b2fa9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

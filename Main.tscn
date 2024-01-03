@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://ewe5plgh4ujx"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_pnn0r"]
+[ext_resource type="PackedScene" uid="uid://bh2fluoktn6fk" path="res://Mob.tscn" id="2_o6271"]
+[ext_resource type="PackedScene" uid="uid://ds6sqsss22ygp" path="res://Player.tscn" id="3_dy8sf"]
+[ext_resource type="PackedScene" uid="uid://cbb8mensxwqg8" path="res://UserInterface.tscn" id="4_2wvtt"]
+[ext_resource type="AudioStream" uid="uid://dpc1h57f70lsi" path="res://sound/hendrix/magnet_action.wav" id="5_d1lq6"]
+[ext_resource type="AudioStream" uid="uid://c3e2drw15gc4r" path="res://sound/hendrix/Checking Manifest.mp3" id="6_dt2uo"]
+[ext_resource type="AudioStream" uid="uid://tk64xbi2ivuj" path="res://sound/hendrix/Parabola.mp3" id="7_8kaf3"]
+
+[sub_resource type="Curve2D" id="Curve2D_inq2f"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 24, 24, 0, 0, 0, 0, 456, 24, 0, 0, 0, 0, 456, 696, 0, 0, 0, 0, 24, 696, 0, 0, 0, 0, 24, 24)
+}
+point_count = 5
+
+[node name="Main" type="Node"]
+script = ExtResource("1_pnn0r")
+mob_scene = ExtResource("2_o6271")
+
+[node name="Player" parent="." instance=ExtResource("3_dy8sf")]
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(240, 450)
+
+[node name="MobPath" type="Path2D" parent="."]
+visible = false
+curve = SubResource("Curve2D_inq2f")
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+position = Vector2(24, 24)
+
+[node name="HUD" parent="." instance=ExtResource("4_2wvtt")]
+
+[node name="GameStart" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_d1lq6")
+volume_db = 10.0
+pitch_scale = 0.9
+
+[node name="MainMenu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_dt2uo")
+volume_db = 5.0
+
+[node name="Level1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_8kaf3")
+volume_db = 2.0
+
+[connection signal="hit" from="Player" to="." method="game_over"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

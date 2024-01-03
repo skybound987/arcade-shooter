@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cc2gsbvxdimx5"]
+
+[ext_resource type="Script" path="res://Laser.gd" id="1_87tvp"]
+[ext_resource type="Texture2D" uid="uid://buyh3cnea2hok" path="res://art/laser.png" id="1_cb8g7"]
+[ext_resource type="AudioStream" uid="uid://b1gu25bmduhaa" path="res://sound/hendrix/laser4.mp3" id="3_fs4xs"]
+[ext_resource type="AudioStream" uid="uid://dilc61pyo7ajq" path="res://sound/hendrix/threeTone2.mp3" id="4_syici"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hq8y0"]
+radius = 2.0
+height = 54.0
+
+[node name="Laser" type="Area2D"]
+script = ExtResource("1_87tvp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cb8g7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape2D_hq8y0")
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_fs4xs")
+
+[node name="MobDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_syici")
+volume_db = 10.0
+
+[connection signal="body_entered" from="." to="." method="_on_Laser_body_entered"]

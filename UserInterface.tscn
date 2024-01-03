@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbb8mensxwqg8"]
+
+[ext_resource type="FontFile" uid="uid://bwla13i5fehhw" path="res://fonts/Xolonium-Regular.ttf" id="1_1c8yn"]
+[ext_resource type="Script" path="res://UserInterface.gd" id="1_jvmhw"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_jvmhw")
+
+[node name="ScoreBoard" type="Label" parent="."]
+offset_left = 82.0
+offset_top = 65.0
+offset_right = 127.0
+offset_bottom = 146.0
+theme_override_fonts/font = ExtResource("1_1c8yn")
+theme_override_font_sizes/font_size = 64
+text = "0"

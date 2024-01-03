@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://ds6sqsss22ygp"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_jlris"]
+[ext_resource type="Texture2D" uid="uid://svgphyqtmgeh" path="res://art/player_up.png" id="2_bi8ot"]
+[ext_resource type="PackedScene" uid="uid://cc2gsbvxdimx5" path="res://Laser.tscn" id="2_mm6u1"]
+[ext_resource type="AudioStream" uid="uid://cc1dfhy5dppgq" path="res://sound/hendrix/Vehicle_Car_Engine_Idle_Interior_Loop_Mono_01.wav" id="5_tng4q"]
+[ext_resource type="AudioStream" uid="uid://dp8h3sxpy5hk0" path="res://sound/hendrix/Mecha DAMAGED 1.wav" id="5_vq1hv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ywtku"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bi8ot")
+}],
+"loop": true,
+"name": &"horizontal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bi8ot")
+}],
+"loop": true,
+"name": &"vertical",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1yx0"]
+radius = 22.0
+height = 88.0
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_jlris")
+laser_scene = ExtResource("2_mm6u1")
+
+[node name="MovementSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_ywtku")
+animation = &"vertical"
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, 6)
+shape = SubResource("CapsuleShape2D_s1yx0")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="LeftGunPosition" type="Marker2D" parent="."]
+position = Vector2(-35, -17)
+
+[node name="RightGunPosition" type="Marker2D" parent="."]
+position = Vector2(35, -17)
+
+[node name="EngineTurn" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_tng4q")
+volume_db = 10.0
+max_distance = 5000.0
+
+[node name="ShipExplode" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_vq1hv")
+
+[connection signal="body_entered" from="." to="." method="_player_body_entered"]
