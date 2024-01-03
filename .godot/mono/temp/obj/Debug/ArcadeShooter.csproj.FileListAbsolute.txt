@@ -1,0 +1,17 @@
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\obj\Debug\ArcadeShooter.csproj.AssemblyReference.cache
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\obj\Debug\ArcadeShooter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\obj\Debug\ArcadeShooter.AssemblyInfoInputs.cache
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\obj\Debug\ArcadeShooter.AssemblyInfo.cs
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\obj\Debug\ArcadeShooter.csproj.CoreCompileInputs.cache
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\bin\Debug\ArcadeShooter.deps.json
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\bin\Debug\ArcadeShooter.runtimeconfig.json
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\bin\Debug\ArcadeShooter.dll
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\bin\Debug\ArcadeShooter.pdb
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\obj\Debug\ArcadeShooter.csproj.CopyComplete
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\obj\Debug\ArcadeShooter.dll
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\obj\Debug\refint\ArcadeShooter.dll
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\obj\Debug\ArcadeShooter.pdb
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\obj\Debug\ArcadeShooter.genruntimeconfig.cache
+C:\Users\jonhe\Projects\ArcadeShooter\.godot\mono\temp\obj\Debug\ref\ArcadeShooter.dll

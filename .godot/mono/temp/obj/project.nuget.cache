@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "hxtPAYLe4dtRPXCz5+FWrIA6qq2JQKhahQFuXE+4lFeiTfIesqMBRtSiIIgWdKe3zEZQ9cfz8oaPjQgD8I/53w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jonhe\\Projects\\ArcadeShooter\\ArcadeShooter.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jonhe\\.nuget\\packages\\godot.sourcegenerators\\4.1.2\\godot.sourcegenerators.4.1.2.nupkg.sha512",
+    "C:\\Users\\jonhe\\.nuget\\packages\\godotsharp\\4.1.2\\godotsharp.4.1.2.nupkg.sha512",
+    "C:\\Users\\jonhe\\.nuget\\packages\\godotsharpeditor\\4.1.2\\godotsharpeditor.4.1.2.nupkg.sha512",
+    "C:\\Users\\jonhe\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.15\\microsoft.netcore.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\jonhe\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.15\\microsoft.windowsdesktop.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\jonhe\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.15\\microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}

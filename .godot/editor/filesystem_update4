@@ -1,0 +1,10 @@
+res://Main.tscn
+res://Mob.tscn
+res://Player.tscn
+res://Laser.tscn
+res://Player.gd
+res://Mob.gd
+res://Laser.gd
+res://Main.gd
+res://UserInterface.tscn
+res://UserInterface.gd
