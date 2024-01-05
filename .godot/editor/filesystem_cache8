@@ -1,21 +1,17 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1704419019
+::res://::1704494303
 icon.svg::CompressedTexture2D::4751506775569148271::1701703710::1704090838::1::::<><>::
-Laser.cs::CSharpScript::-1::1703286460::0::1::::<><>::
-Laser.gd::GDScript::-1::1704336580::0::1::::<>Area2D<>::
-Laser.tscn::PackedScene::4969353786282363500::1704341718::0::1::::<><>::res://Laser.gd<>uid://buyh3cnea2hok::::res://art/laser.png<>uid://b1gu25bmduhaa::::res://sound/hendrix/laser4.mp3<>uid://dilc61pyo7ajq::::res://sound/hendrix/threeTone2.mp3
-Main.cs::CSharpScript::-1::1703273705::0::1::::<><>::
-Main.gd::GDScript::-1::1704341718::0::1::::<>Node<>::
-Main.tscn::PackedScene::326468932055888241::1704341735::0::1::::<><>::res://Main.gd<>uid://bh2fluoktn6fk::::res://Mob.tscn<>uid://ds6sqsss22ygp::::res://Player.tscn<>uid://cbb8mensxwqg8::::res://UserInterface.tscn<>uid://dpc1h57f70lsi::::res://sound/hendrix/magnet_action.wav<>uid://c3e2drw15gc4r::::res://sound/hendrix/Checking Manifest.mp3<>uid://tk64xbi2ivuj::::res://sound/hendrix/Parabola.mp3
-Mob.cs::CSharpScript::-1::1703000692::0::1::::<><>::
-Mob.gd::GDScript::-1::1704340843::0::1::::<>RigidBody2D<>::
-Mob.tscn::PackedScene::2933805089790284168::1704341718::0::1::::<><>::res://Mob.gd<>uid://dpniou4h12hkq::::res://art/enemyFlyingAlt_1.png<>uid://bd80g8runi1up::::res://art/enemyFlyingAlt_2.png<>uid://cljp2p1bl20po::::res://art/enemySwimming_1.png<>uid://df6oliaxcgduf::::res://art/enemySwimming_2.png<>uid://cwhf5l24wognx::::res://art/enemyWalking_1.png<>uid://blhhd7gen1fcf::::res://art/enemyWalking_2.png
-Player.cs::CSharpScript::-1::1703900962::0::1::::<><>::
+Laser.gd::GDScript::-1::1704493313::0::1::::<>Area2D<>::
+Laser.tscn::PackedScene::4969353786282363500::1704493331::0::1::::<><>::res://Laser.gd<>uid://buyh3cnea2hok::::res://art/laser.png<>uid://b1gu25bmduhaa::::res://sound/hendrix/laser4.mp3<>uid://dilc61pyo7ajq::::res://sound/hendrix/threeTone2.mp3
+Main.gd::GDScript::-1::1704492789::0::1::::<>Node<>::
+Main.tscn::PackedScene::326468932055888241::1704493331::0::1::::<><>::res://Main.gd<>uid://bh2fluoktn6fk::::res://Mob.tscn<>uid://ds6sqsss22ygp::::res://Player.tscn<>uid://cbb8mensxwqg8::::res://UserInterface.tscn<>uid://dpc1h57f70lsi::::res://sound/hendrix/magnet_action.wav<>uid://c3e2drw15gc4r::::res://sound/hendrix/Checking Manifest.mp3<>uid://tk64xbi2ivuj::::res://sound/hendrix/Parabola.mp3
+Mob.gd::GDScript::-1::1704493124::0::1::::<>RigidBody2D<>::
+Mob.tscn::PackedScene::2933805089790284168::1704493331::0::1::::<><>::res://Mob.gd<>uid://dpniou4h12hkq::::res://art/enemyFlyingAlt_1.png<>uid://bd80g8runi1up::::res://art/enemyFlyingAlt_2.png<>uid://cljp2p1bl20po::::res://art/enemySwimming_1.png<>uid://df6oliaxcgduf::::res://art/enemySwimming_2.png<>uid://cwhf5l24wognx::::res://art/enemyWalking_1.png<>uid://blhhd7gen1fcf::::res://art/enemyWalking_2.png
 Player.gd::GDScript::-1::1704153099::0::1::::<>Area2D<>::
-Player.tscn::PackedScene::8487779399593803779::1704341718::0::1::::<><>::res://Player.gd<>uid://svgphyqtmgeh::::res://art/player_up.png<>uid://cc2gsbvxdimx5::::res://Laser.tscn<>uid://cc1dfhy5dppgq::::res://sound/hendrix/Vehicle_Car_Engine_Idle_Interior_Loop_Mono_01.wav<>uid://dp8h3sxpy5hk0::::res://sound/hendrix/Mecha DAMAGED 1.wav
+Player.tscn::PackedScene::8487779399593803779::1704493331::0::1::::<><>::res://Player.gd<>uid://svgphyqtmgeh::::res://art/player_up.png<>uid://cc2gsbvxdimx5::::res://Laser.tscn<>uid://cc1dfhy5dppgq::::res://sound/hendrix/Vehicle_Car_Engine_Idle_Interior_Loop_Mono_01.wav<>uid://dp8h3sxpy5hk0::::res://sound/hendrix/Mecha DAMAGED 1.wav
 README.md::TextFile::-1::1704296429::0::1::::<><>::
 UserInterface.gd::GDScript::-1::1704154387::0::1::::<>CanvasLayer<>::
-UserInterface.tscn::PackedScene::4847119910091761101::1704341718::0::1::::<><>::uid://bwla13i5fehhw::::res://fonts/Xolonium-Regular.ttf<>res://UserInterface.gd
+UserInterface.tscn::PackedScene::4847119910091761101::1704493331::0::1::::<><>::uid://bwla13i5fehhw::::res://fonts/Xolonium-Regular.ttf<>res://UserInterface.gd
 ::res://art/::1704301835
 enemyFlyingAlt_1.png::CompressedTexture2D::8239443449129559576::1701703995::1704090838::1::::<><>::
 enemyFlyingAlt_2.png::CompressedTexture2D::2666642080532417647::1701703995::1704090838::1::::<><>::

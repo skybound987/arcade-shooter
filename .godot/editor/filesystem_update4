@@ -3,6 +3,3 @@ res://Mob.tscn
 res://Player.tscn
 res://Laser.tscn
 res://UserInterface.tscn
-res://Main.gd
-res://Laser.gd
-res://Mob.gd

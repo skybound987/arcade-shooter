@@ -60,6 +60,7 @@ sprite_frames = SubResource("SpriteFrames_okm82")
 animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_i610m")
 
