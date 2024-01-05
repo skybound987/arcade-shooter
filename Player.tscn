@@ -30,6 +30,7 @@ radius = 22.0
 height = 88.0
 
 [node name="Player" type="Area2D"]
+collision_layer = 3
 script = ExtResource("1_jlris")
 laser_scene = ExtResource("2_mm6u1")
 

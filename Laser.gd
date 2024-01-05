@@ -10,10 +10,10 @@ func _physics_process(delta):
 	position -= y_vector * speed * delta
 	
 func _on_Laser_body_entered(body):
-#	if body.is_in_group("Mob"):
-#		body.emit_signal("mob_hit")
-#		if body.emit_signal("mob_hit"):
-#			print("Mob signal is going out!!!!!!")
+	if body.is_in_group("Mob"):
+		body.emit_signal("mob_hit")
+		print("mob_hit mob_hit mob_hit mob_hit")
+		queue_free()
 	#	$MobDeath.play()
 	#	body.queue_free()
 	queue_free()
