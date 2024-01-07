@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bh2fluoktn6fk"]
+[gd_scene load_steps=11 format=3 uid="uid://bh2fluoktn6fk"]
 
 [ext_resource type="Script" path="res://Mob.gd" id="1_5g0ko"]
 [ext_resource type="Texture2D" uid="uid://dpniou4h12hkq" path="res://art/enemyFlyingAlt_1.png" id="2_xi85o"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://df6oliaxcgduf" path="res://art/enemySwimming_2.png" id="5_vaqrq"]
 [ext_resource type="Texture2D" uid="uid://cwhf5l24wognx" path="res://art/enemyWalking_1.png" id="6_wmg0m"]
 [ext_resource type="Texture2D" uid="uid://blhhd7gen1fcf" path="res://art/enemyWalking_2.png" id="7_8hllo"]
+[ext_resource type="AudioStream" uid="uid://cje1dwrsqwiaf" path="res://sound/hendrix/ANMLBat_Creature Vocalisation_01.wav" id="8_02qs1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_okm82"]
 animations = [{
@@ -45,8 +46,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i610m"]
-radius = 36.0
-height = 88.0
+radius = 24.0
+height = 48.0
 
 [node name="Mob" type="RigidBody2D" groups=["Mob"]]
 collision_layer = 5
@@ -55,9 +56,10 @@ gravity_scale = 0.0
 script = ExtResource("1_5g0ko")
 
 [node name="MobSprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_okm82")
 animation = &"walk"
+frame_progress = 0.0305881
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -65,6 +67,9 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_i610m")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="MobDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_02qs1")
 
 [connection signal="mob_hit" from="." to="." method="_mob_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

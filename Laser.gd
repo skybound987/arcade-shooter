@@ -13,10 +13,8 @@ func _on_Laser_body_entered(body):
 	if body.is_in_group("Mob"):
 		body.emit_signal("mob_hit")
 		print("mob_hit mob_hit mob_hit mob_hit")
-		queue_free()
-	#	$MobDeath.play()
-	#	body.queue_free()
-	queue_free()
+	#	queue_free()
+#	queue_free()
 	
 func laser_sound():
 	$LaserSound.play()

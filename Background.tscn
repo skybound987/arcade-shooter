@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5rg8tei8q8u3"]
+
+[ext_resource type="Script" path="res://Background.gd" id="1_c5n8c"]
+[ext_resource type="Texture2D" uid="uid://ca6g4pctfv43l" path="res://art/background/Green_Nebula_05-512x512.png" id="1_nk5eg"]
+
+[node name="Backgrounds" type="ParallaxBackground"]
+script = ExtResource("1_c5n8c")
+
+[node name="Scenery" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 720)
+
+[node name="GreenNebula" type="Sprite2D" parent="Scenery"]
+position = Vector2(240, 360)
+scale = Vector2(0.9375, 1.40625)
+texture = ExtResource("1_nk5eg")

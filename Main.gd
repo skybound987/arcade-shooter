@@ -48,12 +48,13 @@ func _on_mob_timer_timeout():  # Handles mob spawning
 	var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
 	mob.linear_velocity = velocity.rotated(direction)
 
-	mob.mob_dead.connect(Callable(self, "on_mob_dead"))
+	mob.mob_dead.connect(Callable(self, "mob_death"))
 	
 	# Spawns the mob by adding it to the Main scene.
 	add_child(mob)
 
-func on_mob_dead():
+func mob_death():
+	$MobDeath.play()
 	score += 1
 	$HUD.update_score(score)
 #	print("Score +1 - Score Updated!!!!!")

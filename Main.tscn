@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ewe5plgh4ujx"]
+[gd_scene load_steps=11 format=3 uid="uid://ewe5plgh4ujx"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_pnn0r"]
 [ext_resource type="PackedScene" uid="uid://bh2fluoktn6fk" path="res://Mob.tscn" id="2_o6271"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://dpc1h57f70lsi" path="res://sound/hendrix/magnet_action.wav" id="5_d1lq6"]
 [ext_resource type="AudioStream" uid="uid://c3e2drw15gc4r" path="res://sound/hendrix/Checking Manifest.mp3" id="6_dt2uo"]
 [ext_resource type="AudioStream" uid="uid://tk64xbi2ivuj" path="res://sound/hendrix/Parabola.mp3" id="7_8kaf3"]
+[ext_resource type="AudioStream" uid="uid://cje1dwrsqwiaf" path="res://sound/hendrix/ANMLBat_Creature Vocalisation_01.wav" id="8_veyn0"]
+[ext_resource type="PackedScene" uid="uid://b5rg8tei8q8u3" path="res://Background.tscn" id="9_vbl4h"]
 
 [sub_resource type="Curve2D" id="Curve2D_inq2f"]
 _data = {
@@ -53,6 +55,11 @@ volume_db = 5.0
 [node name="Level1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_8kaf3")
 volume_db = 2.0
+
+[node name="MobDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_veyn0")
+
+[node name="Backgrounds" parent="." instance=ExtResource("9_vbl4h")]
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
