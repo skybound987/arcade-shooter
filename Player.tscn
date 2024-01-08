@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://ds6sqsss22ygp"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_jlris"]
-[ext_resource type="Texture2D" uid="uid://svgphyqtmgeh" path="res://art/player_up.png" id="2_bi8ot"]
 [ext_resource type="PackedScene" uid="uid://cc2gsbvxdimx5" path="res://Laser.tscn" id="2_mm6u1"]
+[ext_resource type="Texture2D" uid="uid://bpsjc5flshgln" path="res://art/player/danger_6.png" id="3_1krok"]
 [ext_resource type="AudioStream" uid="uid://cc1dfhy5dppgq" path="res://sound/hendrix/Vehicle_Car_Engine_Idle_Interior_Loop_Mono_01.wav" id="5_tng4q"]
 [ext_resource type="AudioStream" uid="uid://dp8h3sxpy5hk0" path="res://sound/hendrix/Mecha DAMAGED 1.wav" id="5_vq1hv"]
 
@@ -10,7 +10,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_bi8ot")
+"texture": ExtResource("3_1krok")
 }],
 "loop": true,
 "name": &"horizontal",
@@ -18,7 +18,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_bi8ot")
+"texture": ExtResource("3_1krok")
 }],
 "loop": true,
 "name": &"vertical",
@@ -26,8 +26,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1yx0"]
-radius = 22.0
-height = 88.0
+radius = 27.0
+height = 54.0
 
 [node name="Player" type="Area2D"]
 collision_layer = 3
@@ -35,21 +35,22 @@ script = ExtResource("1_jlris")
 laser_scene = ExtResource("2_mm6u1")
 
 [node name="MovementSprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
+position = Vector2(0, 9)
+rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_ywtku")
-animation = &"vertical"
+animation = &"horizontal"
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(1, 6)
+position = Vector2(1, 7)
 shape = SubResource("CapsuleShape2D_s1yx0")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="LeftGunPosition" type="Marker2D" parent="."]
-position = Vector2(-35, -17)
+position = Vector2(-18, -15)
 
 [node name="RightGunPosition" type="Marker2D" parent="."]
-position = Vector2(35, -17)
+position = Vector2(18, -15)
 
 [node name="EngineTurn" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_tng4q")
