@@ -1,3 +1,5 @@
+RigidBody2D
+CharacterBody2D
 MeshInstance3D
 SubViewport
 StaticBody3D
@@ -27,5 +29,3 @@ Node
 Node2D
 VisibleOnScreenNotifier2D
 AnimatedSprite2D
-RigidBody2D
-CharacterBody2D

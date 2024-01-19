@@ -104,9 +104,10 @@ gravity_scale = 0.0
 script = ExtResource("1_5g0ko")
 
 [node name="MobSprite" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_okm82")
 animation = &"fly"
-frame_progress = 0.740339
+frame_progress = 0.906824
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

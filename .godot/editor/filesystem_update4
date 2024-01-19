@@ -1,6 +1,7 @@
-res://Player.tscn
 res://Main.tscn
 res://Mob.tscn
+res://Player.tscn
 res://Laser.tscn
 res://UserInterface.tscn
 res://Background.tscn
+res://Player.gd

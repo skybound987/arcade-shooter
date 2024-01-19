@@ -1,18 +1,22 @@
-extends Area2D
+extends RigidBody2D
 
 # Player Collision Signal Detection
 signal hit
 
 # Settings
-@export var speed = 400 # Player Speed (pixels/sec)
 @export var laser_scene: PackedScene
 
 # Variables
+@export var speed = 400 # Player Speed (pixels/sec)
 var score
 var screen_size
 var alive = true
 var next_fire_time = 0 # controls the rate of fire
 var fire_rate = .1 # seconds between shots
+var max_speed: float = 400.0
+var thrust = Vector2(0, -250)
+var torque = 20000
+
 
 
 # Player collision function
@@ -36,49 +40,35 @@ func fire():
 	var laser_instance_right = laser_scene.instantiate()
 	var left_gun_position = $LeftGunPosition.global_position
 	var right_gun_position = $RightGunPosition.global_position
-	
+
 	laser_instance_left.global_position = left_gun_position
 	laser_instance_right.global_position = right_gun_position
-	
+
 	get_tree().root.add_child(laser_instance_left)
 	get_tree().root.add_child(laser_instance_right)
 	laser_instance_left.laser_sound()  # If placed before the instance is created in the root tree, error
 
 
-# Ready function
+# Called once at start
 func _ready():
 	screen_size = get_viewport_rect().size
 	alive = true
 
-# Processes, called every frame
-func _process(delta):
-	var velocity = Vector2.ZERO
+# Called every frame
+func _physics_process(delta):
+	var velocity: Vector2 = Vector2.ZERO
 
 	if alive:  # Player controls below only function if player is alive
-		var moving = false
-		# Basic Movement
-		if Input.is_action_pressed("move_right"):
-			velocity.x += 1
-			moving = true
-			
-		if Input.is_action_pressed("move_left"):
-			velocity.x -= 1
-			moving = true
-			
-		if Input.is_action_pressed("move_down"):
-			velocity.y += 1
-			moving = true
-
-		if Input.is_action_pressed("move_up"):
-			velocity.y -= 1
-			moving = true
+		var moving = false	
+#		if velocity.length() > max_speed:  # Caps max speed
+#			velocity = velocity.normalized() * max_speed
 
 		# Player Sounds
 		if moving and not $EngineTurn.is_playing():
 			$EngineTurn.play()
 		elif not moving and $EngineTurn.is_playing():
 			$EngineTurn.stop()
-	
+
 		# Animations for Player Sprites
 		if velocity.length() > 0:
 			velocity = velocity.normalized() * speed
@@ -100,13 +90,28 @@ func _process(delta):
 		position = position.clamp(Vector2.ZERO, screen_size)
 
 		# Handles Primary Weapons Fire
-		if Input.is_action_just_pressed("primary_fire"):
-			fire()
-		
+#		if Input.is_action_just_pressed("primary_fire"):
+#			fire()
+
 		# Rapid Fire (Fast)
 		if Input.is_action_pressed("primary_fire") and Time.get_ticks_msec() > next_fire_time:
 			fire()
 			next_fire_time = Time.get_ticks_msec() + fire_rate * 1000
-			
+
 	elif $EngineTurn.is_playing():
 		$EngineTurn.stop()
+
+func _integrate_forces(state):    # Handle Thrust and Rotation
+	
+	if Input.is_action_pressed("move_up"):    # Thrust input
+		state.apply_force(thrust.rotated(rotation))
+	else:
+		state.apply_force(Vector2())
+	
+	var rotation_direction = 0    # Rotation input
+	if Input.is_action_pressed("move_right"):
+		rotation_direction += 1
+	if Input.is_action_pressed("move_left"):
+		rotation_direction -= 1
+		
+	state.apply_torque(rotation_direction * torque)
