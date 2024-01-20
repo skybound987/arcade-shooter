@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ds6sqsss22ygp"]
+[gd_scene load_steps=9 format=3 uid="uid://ds6sqsss22ygp"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_jlris"]
 [ext_resource type="PackedScene" uid="uid://cc2gsbvxdimx5" path="res://Laser.tscn" id="2_mm6u1"]
 [ext_resource type="Texture2D" uid="uid://bpsjc5flshgln" path="res://art/player/danger_6.png" id="3_1krok"]
 [ext_resource type="AudioStream" uid="uid://cc1dfhy5dppgq" path="res://sound/hendrix/Vehicle_Car_Engine_Idle_Interior_Loop_Mono_01.wav" id="5_tng4q"]
 [ext_resource type="AudioStream" uid="uid://dp8h3sxpy5hk0" path="res://sound/hendrix/Mecha DAMAGED 1.wav" id="5_vq1hv"]
+[ext_resource type="AudioStream" uid="uid://0pymjm5j60o1" path="res://sound/hendrix/glass.wav" id="6_ckhnf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ywtku"]
 animations = [{
@@ -32,7 +33,10 @@ height = 54.0
 [node name="Player" type="RigidBody2D"]
 position = Vector2(232, 508)
 collision_layer = 3
+collision_mask = 3
 gravity_scale = 0.0
+max_contacts_reported = 10
+contact_monitor = true
 script = ExtResource("1_jlris")
 laser_scene = ExtResource("2_mm6u1")
 
@@ -61,3 +65,10 @@ max_distance = 5000.0
 
 [node name="ShipExplode" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_vq1hv")
+
+[node name="ShipDamage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ckhnf")
+volume_db = 3.0
+pitch_scale = 0.8
+
+[connection signal="body_entered" from="." to="." method="_player_body_entered"]
