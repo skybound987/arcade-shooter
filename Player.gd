@@ -31,7 +31,7 @@ func _player_dead():
 #	hit.emit() # CollisionShape2D must be deferred as we can't change physics properties on a physics callback.
 	$PlayerCollision.set_deferred("disabled", true) # Turn off the collision when hit
 
-func _player_damage(hit_points = 5):
+func _player_damage(hit_points = 1):
 	$ShipDamage.play()
 	health -= hit_points
 	print("Damage Damage Damage")
