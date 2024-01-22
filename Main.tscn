@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://ewe5plgh4ujx"]
+[gd_scene load_steps=12 format=3 uid="uid://ewe5plgh4ujx"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_pnn0r"]
 [ext_resource type="PackedScene" uid="uid://bh2fluoktn6fk" path="res://Mob.tscn" id="2_o6271"]
 [ext_resource type="PackedScene" uid="uid://ds6sqsss22ygp" path="res://Player.tscn" id="3_dy8sf"]
+[ext_resource type="PackedScene" uid="uid://b8p73s0kh8xvd" path="res://Notifications.tscn" id="4_0rapk"]
 [ext_resource type="PackedScene" uid="uid://cbb8mensxwqg8" path="res://UserInterface.tscn" id="4_2wvtt"]
 [ext_resource type="AudioStream" uid="uid://dpc1h57f70lsi" path="res://sound/hendrix/magnet_action.wav" id="5_d1lq6"]
 [ext_resource type="AudioStream" uid="uid://c3e2drw15gc4r" path="res://sound/hendrix/Checking Manifest.mp3" id="6_dt2uo"]
@@ -21,6 +22,7 @@ script = ExtResource("1_pnn0r")
 mob_scene = ExtResource("2_o6271")
 
 [node name="Player" parent="." instance=ExtResource("3_dy8sf")]
+label_scene = ExtResource("4_0rapk")
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5

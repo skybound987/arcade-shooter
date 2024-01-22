@@ -5,6 +5,7 @@ signal hit
 
 # Settings
 @export var laser_scene: PackedScene
+@export var label_scene: PackedScene
 
 # Variables
 @export var speed = 400 # Player Speed (pixels/sec)
@@ -32,6 +33,10 @@ func _player_dead():
 	$PlayerCollision.set_deferred("disabled", true) # Turn off the collision when hit
 
 func _player_damage(hit_points = 1):
+	var label_instance = label_scene.instantiate()
+	label_instance.position = $LabelPosition.global_position
+	get_tree().root.add_child(label_instance)
+	label_instance.floating_combat_damage(hit_points)
 	$ShipDamage.play()
 	health -= hit_points
 	print("Damage Damage Damage")

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Notifications.gd" id="1_qptmb"]
 [ext_resource type="FontFile" uid="uid://bwla13i5fehhw" path="res://fonts/Xolonium-Regular.ttf" id="2_kli5w"]
 
-[node name="Notifications" type="CanvasLayer"]
+[node name="Notifications" type="Node2D"]
 script = ExtResource("1_qptmb")
 
 [node name="Damage" type="Label" parent="."]

@@ -58,6 +58,9 @@ position = Vector2(-18, -15)
 [node name="RightGunPosition" type="Marker2D" parent="."]
 position = Vector2(18, -15)
 
+[node name="LabelPosition" type="Marker2D" parent="."]
+position = Vector2(0, 50)
+
 [node name="EngineTurn" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_tng4q")
 volume_db = 10.0
@@ -70,5 +73,9 @@ stream = ExtResource("5_vq1hv")
 stream = ExtResource("6_ckhnf")
 volume_db = 3.0
 pitch_scale = 0.8
+
+[node name="Damage" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="body_entered" from="." to="." method="_player_body_entered"]
