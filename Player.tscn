@@ -74,8 +74,4 @@ stream = ExtResource("6_ckhnf")
 volume_db = 3.0
 pitch_scale = 0.8
 
-[node name="Damage" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-
 [connection signal="body_entered" from="." to="." method="_player_body_entered"]
